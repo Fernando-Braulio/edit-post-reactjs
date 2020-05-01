@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fortawesome';
-// import {faEdit} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <div className="App-Header">
         <div></div>
         {!editing 
-          ? <hi>{content.title}</hi>
+          ? <h1>{content.title}</h1>
           : <input type="text"
               value={content.title}
               onChange={e => setContent({ ...content, title: e.target.value })}
@@ -26,7 +26,7 @@ function App() {
         }
         <p className="editBtn" onClick={() => setEditing(!editing)}>
           {!editing ? 'Edit' : 'Publish'}
-          {/* <FontAwesomeIcon icon={faEdit} className="icon" /> */}
+          <FontAwesomeIcon icon={faEdit} className="icon" />
         </p>
       </div>
 
