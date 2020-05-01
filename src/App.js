@@ -31,10 +31,35 @@ function App() {
       </div>
 
       <div className="App-Body">
-        
+        <div>
+          {!editing
+            ? <h3>{content.section1.title}</h3>
+            : <input
+                type="text"
+                value={content.section1.title}
+                onChange={e => setContent(
+                  { ...content, 
+                    section1: { ...content.section1, title: e.target.value }
+                  })}
+                className="liveEditH3"
+              />
+          }
+
+          {!editing
+            ? <p>{content.section1.content}</p>
+            : <textarea
+                value={content.section1.content}
+                onChange={e => setContent(
+                  { ...content, 
+                    section1: { ...content.section1, content: e.target.value }
+                  })}
+                className="liveEditP"
+              ></textarea>
+          }
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
 
